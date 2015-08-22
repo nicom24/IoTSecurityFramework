@@ -1,0 +1,37 @@
+<resources>
+    <!--Facebook-->
+    <string name="facebook_app_id">100111563656984</string>
+
+    <string name="app_name">IoTSecureClient</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_choose_proxy">Choose proxy</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="login_title">Login</string>
+    <string name="title_activity_client">ClientActivity</string>
+    <string name="title_activity_authorization">AuthorizationActivity</string>
+    <string name="main_title">Home</string>
+    <string name="no_items_to_display">No device to display here.</string>
+    <string name="client_resource_selection">Select resource:</string>
+
+    <!--Drawer strings-->
+    <string name="drawer_home">Home</string>
+    <string name="drawer_my_devices">My devices</string>
+    <string name="drawer_share">Share with me</string>
+    <string name="drawer_logout">Logout</string>
+
+    <string name="title_activity_qrdisplay">QRDisplayActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="my_device_title">My devices</string>
+    <string name="get_request">Get requests</string>
+    <string name="post_request">Post requests</string>
+    <string name="put_request">Put requests</string>
+    <string name="delete_request">Delete requests</string>
+    <string name="auth_request">Authorize someone.</string>
+    <string name="unowned_resource">You don\'t own this resource.</string>
+    <string name="owned_resource">You own this resource.</string>
+    <string name="action_refresh">Refresh</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

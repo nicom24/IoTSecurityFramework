@@ -1,0 +1,92 @@
+<?php
+
+class mSql extends CI_Model {
+
+	function __construct() {
+		parent::__construct();
+	}
+	
+	function get_all_resources() {
+		$this->db->select('*');
+		$query = $this->db->get('resource');
+		return $query->result();
+	}
+	
+	function get_all_users() {
+		$this->db->select('*');
+		$query = $this->db->get('user');
+		return $query->result();
+	}
+	
+	function get_all_consumers() {
+		$this->db->select(array('*'));
+		$query = $this->db->get('consumer');
+		return $query->result();
+	}
+	
+	function get_all_tokens() {
+		$this->db->select('*');
+		$query = $this->db->get('token');
+		return $query->result();
+	}
+	
+	function get_all_tokens_fetched() {
+		$query = $this->db->query("SELECT t.t_id, t.token, t.token_secret, t.type, u.name AS u_name, c.name AS c_name 
+						  FROM token AS t INNER JOIN user AS u INNER JOIN consumer AS c 
+						  ON t.user_id = u.u_id AND t.consumer_id = c.c_id");
+		return $query->result();
+	}
+	
+	function get_all_resources_access() {
+		$this->db->select('*');
+		$query = $this->db->get('resource_access');
+		return $query->result();
+	}
+	
+	function get_all_resource_access_by_token_id($t_id) {
+		$query = $this->db->query("SELECT r.resource_uri, ra.actions FROM resource_access AS ra INNER JOIN resource as r 
+								   ON ra.resource_id = r.r_id AND ra.token_id = ".$t_id."");
+		return $query->result();
+	}
+	
+	function insert_resource($r) {
+		$insert_data = array('resource_uuid' => $r);
+		$this->db->insert('resource', $insert_data);
+		return $this->db->insert_id();
+	}
+	
+	function insert_user($u) {
+		$insert_data = array('name' => $u['name'], 'provider' => $u['provider'], 'provider_id' => $u['provider_id'],);
+		$this->db->insert('user', $insert_data);
+		return $this->db->insert_id();		
+	}
+	
+	function insert_consumer($in) {
+		$insert_data = array('consumer_key' => $in['consumerKey'], 'consumer_secret' => $in['consumerSecret'], 'name' => $in['consumerName'], 'u_id' => $in['u_id']);
+		$this->db->insert('consumer', $insert_data);
+		return $this->db->insert_id();
+	}
+	
+	function insert_token($in) {
+		$insert_data = array('token' => $in['token'], 'token_secret' => $in['tokenSecret'], 'type' => $in['tokenType'], 'c_id' => $in['tokenConsumer']);
+		$this->db->insert('token', $insert_data);
+		return $this->db->insert_id();
+	}
+	
+	function insert_new_resource_access($in) {
+		if (!isset($in['action_string']){		
+			$actions = '';
+			for ($kk = 0; $kk < count($in['actions']); $kk++) {
+				$actions = $actions.$in['actions'][$kk];
+				if ($kk < (count($in['actions'])-1))
+					$actions = $actions.',';
+			}
+		}else{
+			$actions = $in['action_string'];
+		}
+		$insert_data = array('resource_id' => $in['resource'], 'token_id' => $in['token'], 'actions' => $actions);
+		$this->db->insert('resource_access', $insert_data);
+		return $this->db->insert_id();
+	}
+}
+?>

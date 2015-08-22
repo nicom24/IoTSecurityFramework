@@ -1,0 +1,65 @@
+p.lead {
+	margin-bottom: 20px;
+}
+p.realtime {
+    display: none;
+}
+#carListLoadingIndicator {
+	display: none;
+}
+/*
+#carDetailsLoadingIndicator{
+	display: none;
+}
+*/
+#times_table {
+    display: none;
+}
+.btn_rt {
+    display: none;
+}
+#carDetailsDIV {
+    display: none;
+}
+span.titleS {
+    display: table;
+    margin: 0 auto;
+}
+.plateContainer {
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;
+    -ms-transition: -ms-transform 0.2s;
+    transition: transform 0.2s;
+    background-color: lightgray;
+    /*float: left;*/
+    
+    width: 60px;
+    height: 60px;
+    border: solid 1px #ccc;
+    display: inline-block;;
+    letter-spacing: normal;
+    /*font-size: normal;*/
+    white-space: normal;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+    /*margin-left: 20px;*/
+    /*margin-right: 20px;*/
+}
+.plateContainer:hover {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.plateContainerGlobal {
+    /*border: solid 1px #aaa;*/
+    text-align: center;
+    /*white-space: nowrap;*/
+    font-size: 1.2em;
+    letter-spacing: 4em;
+    /*line-height: 1.2em;*/
+    /*overflow: hidden;*/
+    width: 95%;
+    margin: auto;
+}

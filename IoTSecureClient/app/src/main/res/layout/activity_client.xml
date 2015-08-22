@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="oas.iot.unipr.it.iotsecureclient.ClientActivity">
+
+    <android.support.v7.widget.Toolbar android:id="@+id/client_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:title="@string/main_title"
+        />
+
+    <LinearLayout android:padding="8dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/client_toolbar">
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView android:id="@+id/client_device_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_iot_device"/>
+
+        <LinearLayout android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView android:id="@+id/client_device_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name: Decio"/>
+
+            <TextView android:id="@+id/client_device_uuid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Uuid: b0aa5dd7-2619-4a48-90f3-bd03680a5899"/>
+
+            <TextView android:id="@+id/client_device_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Producer: Samsung"/>
+
+            <TextView android:id="@+id/client_device_model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Model: A5"/>
+
+            <TextView android:id="@+id/client_device_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type: switch"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button android:id="@+id/client_get_button"
+            android:text="GET"
+            android:layout_width="@dimen/square_button_size"
+            android:layout_height="@dimen/square_button_size" />
+
+        <Button android:id="@+id/client_post_button"
+            android:text="POST"
+            android:layout_width="@dimen/square_button_size"
+            android:layout_height="@dimen/square_button_size" />
+
+        <Button android:id="@+id/client_put_button"
+            android:text="PUT"
+            android:layout_width="@dimen/square_button_size"
+            android:layout_height="@dimen/square_button_size" />
+
+        <Button android:id="@+id/client_delete_button"
+        android:text="DEL"
+        android:layout_width="@dimen/square_button_size"
+        android:layout_height="@dimen/square_button_size" />
+
+        <Button android:id="@+id/client_secure_button"
+            android:text="DTLS"
+            android:layout_width="@dimen/square_button_size"
+            android:layout_height="@dimen/square_button_size" />
+
+    </LinearLayout>
+
+    <TextView android:text="@string/client_resource_selection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"/>
+
+    <RadioGroup android:id="@+id/client_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></RadioGroup>
+
+    <TextView android:id="@+id/client_response"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_margin="8dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

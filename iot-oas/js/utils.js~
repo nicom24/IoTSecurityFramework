@@ -1,0 +1,11 @@
+function random_generator(len)
+{
+    var ret = "";
+    var charset = "abcdefghijklmnopqrstuvwxyz-0123456789_ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    for (var kk = 0; kk < len; kk++) {
+        ret += charset.charAt(Math.floor(Math.random() * charset.length));
+    }
+
+    return ret;
+}
